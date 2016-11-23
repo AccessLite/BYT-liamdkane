@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81EC85E41DE50E6D00491531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85E31DE50E6D00491531 /* AppDelegate.swift */; };
+		81EC85E91DE50E6D00491531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EC85E71DE50E6D00491531 /* Main.storyboard */; };
+		81EC85EB1DE50E6D00491531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EC85EA1DE50E6D00491531 /* Assets.xcassets */; };
+		81EC85EE1DE50E6D00491531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EC85EC1DE50E6D00491531 /* LaunchScreen.storyboard */; };
+		81EC85F61DE5108500491531 /* Foaas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85F51DE5108500491531 /* Foaas.swift */; };
+		81EC85F81DE5109F00491531 /* FoaasOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85F71DE5109F00491531 /* FoaasOperation.swift */; };
+		81EC85FA1DE510D000491531 /* FoaasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85F91DE510D000491531 /* FoaasProtocols.swift */; };
+		81EC85FC1DE5122300491531 /* FoaasAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85FB1DE5122300491531 /* FoaasAPIManager.swift */; };
+		81EC85FE1DE5123000491531 /* FoaasDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85FD1DE5123000491531 /* FoaasDataManager.swift */; };
+		81EC86001DE5134E00491531 /* FoaasField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85FF1DE5134E00491531 /* FoaasField.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		81EC85E01DE50E6D00491531 /* BYT-liamdkane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BYT-liamdkane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EC85E31DE50E6D00491531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		81EC85E81DE50E6D00491531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		81EC85EA1DE50E6D00491531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81EC85ED1DE50E6D00491531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81EC85EF1DE50E6D00491531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81EC85F51DE5108500491531 /* Foaas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foaas.swift; sourceTree = "<group>"; };
+		81EC85F71DE5109F00491531 /* FoaasOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoaasOperation.swift; sourceTree = "<group>"; };
+		81EC85F91DE510D000491531 /* FoaasProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoaasProtocols.swift; sourceTree = "<group>"; };
+		81EC85FB1DE5122300491531 /* FoaasAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoaasAPIManager.swift; sourceTree = "<group>"; };
+		81EC85FD1DE5123000491531 /* FoaasDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoaasDataManager.swift; sourceTree = "<group>"; };
+		81EC85FF1DE5134E00491531 /* FoaasField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoaasField.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		81EC85DD1DE50E6D00491531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81EC85D71DE50E6D00491531 = {
+			isa = PBXGroup;
+			children = (
+				81EC85E21DE50E6D00491531 /* BYT-liamdkane */,
+				81EC85E11DE50E6D00491531 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81EC85E11DE50E6D00491531 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81EC85E01DE50E6D00491531 /* BYT-liamdkane.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81EC85E21DE50E6D00491531 /* BYT-liamdkane */ = {
+			isa = PBXGroup;
+			children = (
+				81EC85E31DE50E6D00491531 /* AppDelegate.swift */,
+				81EC85E71DE50E6D00491531 /* Main.storyboard */,
+				81EC86011DE5174300491531 /* Models */,
+				81EC86021DE5174E00491531 /* Managers */,
+				81EC85EA1DE50E6D00491531 /* Assets.xcassets */,
+				81EC85EC1DE50E6D00491531 /* LaunchScreen.storyboard */,
+				81EC85EF1DE50E6D00491531 /* Info.plist */,
+			);
+			path = "BYT-liamdkane";
+			sourceTree = "<group>";
+		};
+		81EC86011DE5174300491531 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81EC85F91DE510D000491531 /* FoaasProtocols.swift */,
+				81EC85F51DE5108500491531 /* Foaas.swift */,
+				81EC85FF1DE5134E00491531 /* FoaasField.swift */,
+				81EC85F71DE5109F00491531 /* FoaasOperation.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		81EC86021DE5174E00491531 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				81EC85FB1DE5122300491531 /* FoaasAPIManager.swift */,
+				81EC85FD1DE5123000491531 /* FoaasDataManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		81EC85DF1DE50E6D00491531 /* BYT-liamdkane */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81EC85F21DE50E6D00491531 /* Build configuration list for PBXNativeTarget "BYT-liamdkane" */;
+			buildPhases = (
+				81EC85DC1DE50E6D00491531 /* Sources */,
+				81EC85DD1DE50E6D00491531 /* Frameworks */,
+				81EC85DE1DE50E6D00491531 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BYT-liamdkane";
+			productName = "BYT-liamdkane";
+			productReference = 81EC85E01DE50E6D00491531 /* BYT-liamdkane.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		81EC85D81DE50E6D00491531 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = C4Q;
+				TargetAttributes = {
+					81EC85DF1DE50E6D00491531 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 81EC85DB1DE50E6D00491531 /* Build configuration list for PBXProject "BYT-liamdkane" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 81EC85D71DE50E6D00491531;
+			productRefGroup = 81EC85E11DE50E6D00491531 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81EC85DF1DE50E6D00491531 /* BYT-liamdkane */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81EC85DE1DE50E6D00491531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EC85EE1DE50E6D00491531 /* LaunchScreen.storyboard in Resources */,
+				81EC85EB1DE50E6D00491531 /* Assets.xcassets in Resources */,
+				81EC85E91DE50E6D00491531 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		81EC85DC1DE50E6D00491531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81EC86001DE5134E00491531 /* FoaasField.swift in Sources */,
+				81EC85F81DE5109F00491531 /* FoaasOperation.swift in Sources */,
+				81EC85F61DE5108500491531 /* Foaas.swift in Sources */,
+				81EC85FE1DE5123000491531 /* FoaasDataManager.swift in Sources */,
+				81EC85FA1DE510D000491531 /* FoaasProtocols.swift in Sources */,
+				81EC85E41DE50E6D00491531 /* AppDelegate.swift in Sources */,
+				81EC85FC1DE5122300491531 /* FoaasAPIManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		81EC85E71DE50E6D00491531 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81EC85E81DE50E6D00491531 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		81EC85EC1DE50E6D00491531 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81EC85ED1DE50E6D00491531 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		81EC85F01DE50E6D00491531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81EC85F11DE50E6D00491531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81EC85F31DE50E6D00491531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "BYT-liamdkane/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.liamkane.BYT-liamdkane";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		81EC85F41DE50E6D00491531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "BYT-liamdkane/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.liamkane.BYT-liamdkane";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		81EC85DB1DE50E6D00491531 /* Build configuration list for PBXProject "BYT-liamdkane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EC85F01DE50E6D00491531 /* Debug */,
+				81EC85F11DE50E6D00491531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81EC85F21DE50E6D00491531 /* Build configuration list for PBXNativeTarget "BYT-liamdkane" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81EC85F31DE50E6D00491531 /* Debug */,
+				81EC85F41DE50E6D00491531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 81EC85D81DE50E6D00491531 /* Project object */;
+}
