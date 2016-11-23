@@ -31,10 +31,9 @@ class FoaasField: JSONConvertible, CustomStringConvertible {
     }
     
     func toJson() -> [String : AnyObject] {
-        let json: [String: AnyObject] = [
+        return [
             "name" : self.name as AnyObject,
             "field" : self.field as AnyObject
         ]
-        return json
     }
 }
