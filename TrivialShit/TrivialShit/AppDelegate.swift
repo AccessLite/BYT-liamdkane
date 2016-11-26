@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  BYT-liamdkane
+//  TrivialShit
 //
-//  Created by C4Q on 11/22/16.
+//  Created by C4Q on 11/23/16.
 //  Copyright © 2016 C4Q. All rights reserved.
 //
 
@@ -15,15 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if !FoaasDataManager.shared.load() {
-        
-        
-        FoaasAPIManager.getOperations { (foaas: [FoaasOperation]?) in
-            guard let f = foaas else {return}
-            print(f.count)
-            FoaasDataManager.shared.save(operations: f)
-        }
-        }
+        // Override point for customization after application launch.
         return true
     }
 
