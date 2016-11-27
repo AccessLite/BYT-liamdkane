@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81D32F3A1DEA62F000407640 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D32F391DEA62F000407640 /* OperationsTableViewController.swift */; };
+		81D32F3D1DEA631600407640 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D32F3C1DEA631600407640 /* MainPageViewController.swift */; };
+		81D32F3F1DEA632300407640 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D32F3E1DEA632300407640 /* PreviewViewController.swift */; };
 		81EC85E41DE50E6D00491531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EC85E31DE50E6D00491531 /* AppDelegate.swift */; };
 		81EC85E91DE50E6D00491531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EC85E71DE50E6D00491531 /* Main.storyboard */; };
 		81EC85EB1DE50E6D00491531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EC85EA1DE50E6D00491531 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81D32F391DEA62F000407640 /* OperationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsTableViewController.swift; sourceTree = "<group>"; };
+		81D32F3C1DEA631600407640 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		81D32F3E1DEA632300407640 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		81EC85E01DE50E6D00491531 /* BYT-liamdkane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BYT-liamdkane.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EC85E31DE50E6D00491531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EC85E81DE50E6D00491531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81D32F3B1DEA62FA00407640 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81D32F391DEA62F000407640 /* OperationsTableViewController.swift */,
+				81D32F3C1DEA631600407640 /* MainPageViewController.swift */,
+				81D32F3E1DEA632300407640 /* PreviewViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		81EC85D71DE50E6D00491531 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +86,7 @@
 				81EC86021DE5174E00491531 /* Managers */,
 				81EC85EA1DE50E6D00491531 /* Assets.xcassets */,
 				81EC85EC1DE50E6D00491531 /* LaunchScreen.storyboard */,
+				81D32F3B1DEA62FA00407640 /* Controllers */,
 				81EC85EF1DE50E6D00491531 /* Info.plist */,
 			);
 			path = "BYT-liamdkane";
@@ -168,11 +185,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				81EC86001DE5134E00491531 /* FoaasField.swift in Sources */,
+				81D32F3A1DEA62F000407640 /* OperationsTableViewController.swift in Sources */,
 				81EC85F81DE5109F00491531 /* FoaasOperation.swift in Sources */,
 				81EC85F61DE5108500491531 /* Foaas.swift in Sources */,
 				81EC85FE1DE5123000491531 /* FoaasDataManager.swift in Sources */,
 				81EC85FA1DE510D000491531 /* FoaasProtocols.swift in Sources */,
 				81EC85E41DE50E6D00491531 /* AppDelegate.swift in Sources */,
+				81D32F3F1DEA632300407640 /* PreviewViewController.swift in Sources */,
+				81D32F3D1DEA631600407640 /* MainPageViewController.swift in Sources */,
 				81EC85FC1DE5122300491531 /* FoaasAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

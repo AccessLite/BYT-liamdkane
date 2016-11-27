@@ -12,7 +12,7 @@ class Foaas: JSONConvertible, CustomStringConvertible {
     let message: String
     let subtitle: String
     var description: String {
-        return "Message: \(self.message), Subtitle: \(self.subtitle)"
+        return (message) + "\n" + (self.subtitle)
     }
     
     init (message: String, subtitle: String) {
