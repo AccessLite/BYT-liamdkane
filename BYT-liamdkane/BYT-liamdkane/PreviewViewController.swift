@@ -31,30 +31,26 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             self.navigationItem.title = o.name
         }
         loadPreview(url: self.targetURL)
-        print(targetURL.absoluteString)
     }
     
     func updateText (_ textField: UITextField) {
         guard let opURL = operation?.url else {return}
+        var url = opURL
         switch textField {
         case nameTextField:
-            let url = opURL.replacingOccurrences(of: ":name", with: nameTextField.text!)
-            let newURL: URL = URL(string: "https://www.foaas.com\(url)")!
-            print(url)
-            loadPreview(url: newURL)
+            url = opURL.replacingOccurrences(of: nameLabel.text ?? "", with: nameTextField.text!)
+            self.operation?.url = url
         case fromTextField:
-            let url = opURL.replacingOccurrences(of: ":from", with: fromTextField.text!)
-            let newURL: URL = URL(string: "https://www.foaas.com\(url)")!
-            print(url)
-            loadPreview(url: newURL)
+            url = opURL.replacingOccurrences(of: fromLabel.text ?? "", with: fromTextField.text!)
+            self.operation?.url = url
         case referenceTextField:
-            let url = opURL.replacingOccurrences(of: ":reference", with: referenceTextField.text!)
-            let newURL: URL = URL(string: "https://www.foaas.com\(url)")!
-            print(url)
-            loadPreview(url: newURL)
+            url = opURL.replacingOccurrences(of: referenceLabel.text ?? "", with: referenceTextField.text!)
+            self.operation?.url = url
         default:
             print("Report Bug")
         }
+        let newURL: URL = URL(string: "https://www.foaas.com\(url)")!
+        loadPreview(url: newURL)
 
     }
     

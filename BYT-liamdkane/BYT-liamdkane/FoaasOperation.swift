@@ -15,7 +15,7 @@ enum data: Error {
 
 class FoaasOperation: JSONConvertible, DataConvertible {
     let name: String
-    let url: String
+    var url: String
     //TODO: Clarify if Louis wants to nest objects in this property or nah
     let fields: [FoaasField]
     
