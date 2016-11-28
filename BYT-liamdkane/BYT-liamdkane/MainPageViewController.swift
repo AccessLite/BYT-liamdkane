@@ -12,13 +12,13 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
 
-    var currentFoaas: Foaas?
     var foassEndPoint: String = "https://www.foaas.com/awesome/BYT%20Team"
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getSetFoaas()
+        registerForNotifications()
     }
     
     // MARK: Methods
@@ -40,7 +40,20 @@ class MainPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    internal func registerForNotifications() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(updateFoaas(sender:)), name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: nil)
+    }
+    
+    func updateFoaas(sender: Notification) {
+        if let notificationBundel = sender.object {
+            if let foaasObject = notificationBundel as? Foaas {
+                self.messageLabel.text = foaasObject.message
+                self.fromLabel.text = "From,\n" + foaasObject.subtitle
 
+            }
+        }
+    }
     
     // MARK: - Navigation
 

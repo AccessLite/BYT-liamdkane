@@ -68,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="1050" y="269"/>
         </scene>
-        <!--Operations Table View Controller-->
+        <!--Title-->
         <scene sceneID="A2z-NH-D1F">
             <objects>
                 <tableViewController id="S48-xj-ttd" customClass="OperationsTableViewController" customModule="BYT_liamdkane" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,11 +81,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hIq-Ms-mvz" id="SFd-j2-Q7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJz-Ra-0fI">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -103,13 +103,19 @@
                             <outlet property="delegate" destination="S48-xj-ttd" id="XzS-V4-FRD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qUu-BP-Xbs"/>
+                    <navigationItem key="navigationItem" title="Title" id="TFo-gN-LYR">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="zvU-VB-65x">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="S48-xj-ttd" id="D1v-5M-OK8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2oG-r9-ZEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2922.4000000000001" y="269.41529235382313"/>
         </scene>
-        <!--Preview View Controller-->
+        <!--Title-->
         <scene sceneID="F9F-DP-Vhd">
             <objects>
                 <viewController id="40F-mW-xP0" customClass="PreviewViewController" customModule="BYT_liamdkane" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,6 +216,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Q0k-8s-KWn" secondAttribute="trailing" constant="10" id="xSB-0M-Vkf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="0sL-yr-gLF">
+                        <barButtonItem key="rightBarButtonItem" title="Select" id="c2q-Ev-Nbf">
+                            <connections>
+                                <action selector="selectButtonTapped:" destination="40F-mW-xP0" id="0ij-77-8VT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fromLabel" destination="v3a-Ry-Lrf" id="Mbs-Gj-Z6p"/>
                         <outlet property="fromTextField" destination="v6J-Fk-rdB" id="GYV-4w-fWL"/>

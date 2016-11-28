@@ -34,6 +34,8 @@ class OperationsTableViewController: UITableViewController {
         return cell
     }
 
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+    }
     
     // MARK: - Navigation
 

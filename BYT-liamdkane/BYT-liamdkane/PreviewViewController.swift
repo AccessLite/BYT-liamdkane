@@ -19,9 +19,10 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     @IBOutlet weak var referenceLabel: UILabel!
     
     var operation: FoaasOperation?
-    var url: String {
-        return operation?.url ?? ""
-    }
+    var foaas: Foaas?
+    
+    
+    var url: String = ""
     var targetURL: URL {
         return URL(string: "https://www.foaas.com\(url)")!
     }
@@ -30,35 +31,34 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         if let o = operation {
             self.navigationItem.title = o.name
         }
+        self.navigationItem.hidesBackButton = true
+        self.url = (operation?.url)!
         loadPreview(url: self.targetURL)
     }
     
+    //MARK - Methods
+    
     func updateText (_ textField: UITextField) {
-        guard let opURL = operation?.url else {return}
-        var url = opURL
         switch textField {
         case nameTextField:
-            url = opURL.replacingOccurrences(of: nameLabel.text ?? "", with: nameTextField.text!)
-            self.operation?.url = url
+            self.url = self.url.replacingOccurrences(of: nameLabel.text! , with: nameTextField.text!)
         case fromTextField:
-            url = opURL.replacingOccurrences(of: fromLabel.text ?? "", with: fromTextField.text!)
-            self.operation?.url = url
+            self.url = self.url.replacingOccurrences(of: fromLabel.text! , with: fromTextField.text!)
         case referenceTextField:
-            url = opURL.replacingOccurrences(of: referenceLabel.text ?? "", with: referenceTextField.text!)
-            self.operation?.url = url
+            self.url = self.url.replacingOccurrences(of: referenceLabel.text! , with: referenceTextField.text!)
         default:
             print("Report Bug")
         }
-        let newURL: URL = URL(string: "https://www.foaas.com\(url)")!
-        loadPreview(url: newURL)
+        loadPreview(url: self.targetURL)
 
     }
     
     func loadPreview(url: URL) {
-        FoaasAPIManager.getFoaas(url: url, completion: { (foass: Foaas?) in
+        FoaasAPIManager.getFoaas(url: url, completion: { (foaas: Foaas?) in
             DispatchQueue.main.async {
                 guard let fieldsArr = self.operation?.fields else {return}
-                self.previewTextView.text = foass?.description
+                self.foaas = foaas
+                self.previewTextView.text = foaas?.description
                 switch self.operation!.fields.count {
                 case 2:
                     self.nameLabel.text = ":\(fieldsArr[0].name.lowercased())"
@@ -92,12 +92,23 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     //MARK: - Text Field Delegate Methods
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text!.isEmpty {
+            self.url = operation!.url
+        }
         updateText(textField)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         updateText(textField)
+        if textField.text!.isEmpty {
+            self.url = operation!.url
+        }
         return true
+    }
+    @IBAction func selectButtonTapped(_ sender: UIBarButtonItem) {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: self.foaas)
+        dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Navigation
