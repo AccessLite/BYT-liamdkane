@@ -9,15 +9,13 @@
 import Foundation
 
 class FoaasDataManager {
-    
-    static let shared = FoaasDataManager()
-    private init () {}
-    
-    
-    
+    // consts/vars are always defined at the top of a class
     private static let operationsKey: String = "FoaasOperationsKey"
     private static let defaults = UserDefaults.standard
     internal private(set) var operations: [FoaasOperation]?
+    
+    static let shared = FoaasDataManager()
+    private init () {}
     
     func save(operations: [FoaasOperation]) {
         FoaasDataManager.shared.operations = operations
@@ -27,12 +25,13 @@ class FoaasDataManager {
     
     func load() -> Bool {
         guard let defaultsData = FoaasDataManager.defaults.value(forKey: FoaasDataManager.operationsKey) as? [Data] else { return false }
-        let operationsArr = defaultsData.flatMap{ FoaasOperation(data: $0) }
-        FoaasDataManager.shared.operations = operationsArr
+        let operations = defaultsData.flatMap{ FoaasOperation(data: $0) }
+        FoaasDataManager.shared.operations = operations
         return true
     }
     
     func deleteStoredOperations() {
         FoaasDataManager.defaults.removeObject(forKey: FoaasDataManager.operationsKey)
+        FoaasDataManager.shared.operations = nil
     }
 }
