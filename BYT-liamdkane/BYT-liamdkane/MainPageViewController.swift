@@ -56,7 +56,7 @@ class MainPageViewController: UIViewController {
     }
     
     
-    @IBAction func octoButtonTouched(_ sender: UIButton) {
+    @IBAction func octoButtonTouchedDown(_ sender: UIButton) {
         let newTransform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         let originalTransform = sender.imageView!.transform
         

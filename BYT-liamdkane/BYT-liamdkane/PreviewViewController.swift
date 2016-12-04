@@ -9,7 +9,7 @@
 import UIKit
 
 class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-
+    
     @IBOutlet weak var previewTextView: UITextView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
@@ -18,6 +18,7 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var referenceLabel: UILabel!
     
+    @IBOutlet weak var scrollViewBottomContraint: NSLayoutConstraint!
     var operation: FoaasOperation?
     var foaas: Foaas?
     
@@ -28,15 +29,53 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         if let o = operation {
             self.navigationItem.title = o.name
         }
         self.navigationItem.hidesBackButton = true
         self.url = (operation?.url)!
         loadPreview(url: self.targetURL)
+        setUpNotifications()
+        
     }
     
-    //MARK - Methods
+    func setUpNotifications () {
+        
+        let notificationCenter = NotificationCenter.default
+
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+
+    //MARK: -Keyboard Methods
+    
+    //StackOverflow Source: http://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
+    
+    func keyboardWillShow(notification: NSNotification) {
+         print("keyboard up")
+            let keyboardSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue
+        self.scrollViewBottomContraint.constant = (keyboardSize?.cgRectValue.height)!
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0{
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        print("keyboard down")
+        self.scrollViewBottomContraint.constant = 0
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y != 0{
+//                self.view.frame.origin.y += keyboardSize.height
+//            }
+//        }
+    }
+    
+    //MARK: - Text Upate Methods
     
     func updateText (_ textField: UITextField) {
         switch textField {
@@ -50,7 +89,7 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             print("Report Bug")
         }
         loadPreview(url: self.targetURL)
-
+        
     }
     
     func loadPreview(url: URL) {
@@ -111,14 +150,14 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         notificationCenter.post(name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: self.foaas)
         dismiss(animated: true, completion: nil)
     }
-
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     
-
+    
 }
