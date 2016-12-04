@@ -42,6 +42,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="ButtonImage"/>
                                 <connections>
+                                    <action selector="octoButtonTouched:" destination="Z7y-FE-0xM" eventType="touchDown" id="REd-LK-ZIC"/>
                                     <segue destination="IQE-QY-SLy" kind="presentation" identifier="operationsSegue" id="kPj-PN-4Nc"/>
                                 </connections>
                             </button>
@@ -81,11 +82,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hIq-Ms-mvz" id="SFd-j2-Q7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJz-Ra-0fI">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>

@@ -35,6 +35,7 @@ class OperationsTableViewController: UITableViewController {
     }
 
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Navigation

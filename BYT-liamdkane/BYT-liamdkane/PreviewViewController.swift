@@ -106,6 +106,7 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         return true
     }
     @IBAction func selectButtonTapped(_ sender: UIBarButtonItem) {
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.post(name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: self.foaas)
         dismiss(animated: true, completion: nil)
