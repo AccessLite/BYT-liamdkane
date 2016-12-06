@@ -11,7 +11,7 @@ import UIKit
 class OperationsTableViewController: UITableViewController {
 
     var operations: [FoaasOperation] = FoaasDataManager.shared.operations ?? []
-    private let cellID = "operationsCell"
+    private let cellIdentifier = "operationsCellIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,24 +27,27 @@ class OperationsTableViewController: UITableViewController {
         return operations.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         cell.textLabel?.text = operations[indexPath.row].name
         return cell
     }
 
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+      // This has to dismiss the nav stack
+      self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "previewSegue" {
             let cellIndex = self.tableView.indexPath(for: sender as! UITableViewCell)!.row
-            let pvc = segue.destination as! PreviewViewController
-            pvc.operation = self.operations[cellIndex]
+            
+            // this is probably one of the few places there is a convention for a variable shorthand
+            // "dtvc" is widely understood as "destination view controller" in the context of a segue
+            let dtvc = segue.destination as! PreviewViewController
+            dtvc.operation = self.operations[cellIndex]
         }
     }
 

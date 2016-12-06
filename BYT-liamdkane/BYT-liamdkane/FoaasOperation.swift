@@ -16,7 +16,6 @@ enum data: Error {
 class FoaasOperation: JSONConvertible, DataConvertible {
     let name: String
     var url: String
-    //TODO: Clarify if Louis wants to nest objects in this property or nah
     let fields: [FoaasField]
     
     init(name: String, url: String, fields: [FoaasField]) {
@@ -26,7 +25,6 @@ class FoaasOperation: JSONConvertible, DataConvertible {
     }
     
     //MARK: - Data Convertible
-    
     func toData() throws -> Data {
         let data: Data = try JSONSerialization.data(withJSONObject: self.toJson(), options: [])
         return data
@@ -35,7 +33,7 @@ class FoaasOperation: JSONConvertible, DataConvertible {
     required convenience init?(data: Data) {
         do {
             let validJSON = try JSONSerialization.jsonObject(with: data, options: [])
-            guard let validObject = validJSON as? [String: AnyObject] else {return nil}
+            guard let validObject = validJSON as? [String: AnyObject] else { return nil }
             self.init(json: validObject)
         }
         catch {
@@ -45,9 +43,8 @@ class FoaasOperation: JSONConvertible, DataConvertible {
     }
     
     //MARK: - JSON Convertible
-    
     func toJson() -> [String : AnyObject] {
-        let fieldsJsonArr = self.fields.map {$0.toJson()}
+        let fieldsJsonArr = self.fields.map { $0.toJson() }
         let json: [String: AnyObject] = [
             "name" : self.name as AnyObject,
             "url" : self.url as AnyObject,

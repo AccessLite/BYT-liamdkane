@@ -12,25 +12,27 @@ class MainPageViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
 
-    var foassEndPoint: String = "https://www.foaas.com/awesome/BYT%20Team"
-
+    let foassEndPoint: URL = URL(string: "https://www.foaas.com/awesome/BYT%20Team")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getSetFoaas()
-        registerForNotifications()
+        
+        self.requestFoaas(url: foassEndPoint)
+        self.registerForNotifications()
     }
     
     // MARK: Methods
+    func updateUI(using foaas: Foaas) {
+        DispatchQueue.main.async {
+            self.messageLabel.text = foaas.message
+            self.fromLabel.text = "From,\n" + foaas.subtitle
+        }
+    }
     
-    func getSetFoaas() {
-        guard let foassURL: URL = URL(string: self.foassEndPoint) else {return}
-        FoaasAPIManager.getFoaas(url: foassURL) { (foass: Foaas?) in
-            if let f = foass {
-                DispatchQueue.main.async {
-                    self.messageLabel.text = f.message
-                    self.fromLabel.text = "From,\n" + f.subtitle
-                }
+    func requestFoaas(url: URL) {
+        FoaasAPIManager.getFoaas(url: foassEndPoint) { (foass: Foaas?) in
+            if let validFoaas = foass {
+                self.updateUI(using: validFoaas)
             }
         }
     }
@@ -48,20 +50,8 @@ class MainPageViewController: UIViewController {
     func updateFoaas(sender: Notification) {
         if let notificationBundel = sender.object {
             if let foaasObject = notificationBundel as? Foaas {
-                self.messageLabel.text = foaasObject.message
-                self.fromLabel.text = "From,\n" + foaasObject.subtitle
-
+                self.updateUI(using: foaasObject)
             }
-        }
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "operationsSegue" {
-            print("working?")
-            //pass nothing
         }
     }
 }
