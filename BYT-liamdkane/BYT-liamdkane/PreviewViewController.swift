@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-
+class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate {
+    
     @IBOutlet weak var previewTextView: UITextView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fromTextField: UITextField!
@@ -18,6 +18,7 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var referenceLabel: UILabel!
     
+    @IBOutlet weak var scrollViewBottomContraint: NSLayoutConstraint!
     var operation: FoaasOperation?
     var foaas: Foaas?
     
@@ -30,18 +31,47 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     override func viewDidLoad() {
+<<<<<<< HEAD
+        super.viewDidLoad()
+        if let o = operation {
+            self.navigationItem.title = o.name
+=======
         // More descriptive var names
         if let previewOperation = operation {
             self.navigationItem.title = previewOperation.name
+>>>>>>> da989d5f9179a440b7dec75f89e96fd2a1d96773
         }
         
         // we want to be able to let users back out at this point, i realize that isn't what the storyboard shows though
         self.navigationItem.hidesBackButton = false
         self.url = (operation?.url)!
         loadPreview(url: self.targetURL)
+        setUpNotifications()
+        
     }
     
-    //MARK - Methods
+    //MARK: -Keyboard Methods
+    
+    func setUpNotifications () {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    //StackOverflow Source: http://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
+    
+    func keyboardWillShow(notification: NSNotification) {
+         print("keyboard up")
+            let keyboardSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue
+        self.scrollViewBottomContraint.constant = (keyboardSize?.cgRectValue.height)!
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        print("keyboard down")
+        self.scrollViewBottomContraint.constant = 0
+    }
+    
+    //MARK: - Text Upate Methods
     
     func updateText (_ textField: UITextField) {
         switch textField {
@@ -55,6 +85,10 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             print("Report Bug")
         }
         loadPreview(url: self.targetURL)
+<<<<<<< HEAD
+        
+=======
+>>>>>>> da989d5f9179a440b7dec75f89e96fd2a1d96773
     }
   
   
@@ -121,10 +155,30 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         return true
     }
     @IBAction func selectButtonTapped(_ sender: UIBarButtonItem) {
+<<<<<<< HEAD
+        
+=======
         // Nicely done
+>>>>>>> da989d5f9179a440b7dec75f89e96fd2a1d96773
         let notificationCenter = NotificationCenter.default
         notificationCenter.post(name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: self.foaas)
         dismiss(animated: true, completion: nil)
     }
+<<<<<<< HEAD
+    @IBAction func didTapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
+    
+=======
 
+>>>>>>> da989d5f9179a440b7dec75f89e96fd2a1d96773
 }

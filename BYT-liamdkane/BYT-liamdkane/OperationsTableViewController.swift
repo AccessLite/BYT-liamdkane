@@ -34,8 +34,12 @@ class OperationsTableViewController: UITableViewController {
     }
 
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+<<<<<<< HEAD
+        dismiss(animated: true, completion: nil)
+=======
       // This has to dismiss the nav stack
       self.dismiss(animated: true, completion: nil)
+>>>>>>> da989d5f9179a440b7dec75f89e96fd2a1d96773
     }
     
     // MARK: - Navigation

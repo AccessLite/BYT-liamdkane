@@ -36,7 +36,7 @@ class MainPageViewController: UIViewController {
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,10 +48,43 @@ class MainPageViewController: UIViewController {
     }
     
     func updateFoaas(sender: Notification) {
-        if let notificationBundel = sender.object {
-            if let foaasObject = notificationBundel as? Foaas {
-                self.updateUI(using: foaasObject)
-            }
+        if let notificationBundle = sender.object as? Foaas {
+           self.updateUI(using: notificationBundle)
+        }
+    }
+    
+
+    @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
+        print("working")
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+
+    
+    
+    @IBAction func octoButtonTouchedDown(_ sender: UIButton) {
+        let newTransform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        let originalTransform = sender.imageView!.transform
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            sender.transform = newTransform
+        }, completion: { (complete) in
+            sender.transform = originalTransform
+        })
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "operationsSegue" {
+            print("working?")
+            //pass nothing
         }
     }
 }
