@@ -13,7 +13,8 @@ class FoaasAPIManager {
     private static let defaultSession: URLSession = URLSession(configuration: .default)
     private static let operationsURL: URL = URL(string: "https://www.foaas.com/operations")!
     
-    private static func handle(_ error: Error?, and response: URLResponse?) {
+    // try to avoid non-descriptive public param names. it seems obvious what it means to us, but it wont be true for everyone
+    private static func handle(_ error: Error?, response: URLResponse?) {
         if let e = error{
             print(e.localizedDescription)
         }
@@ -21,16 +22,18 @@ class FoaasAPIManager {
             print(httpReponse.statusCode)
         }
     }
-    private static func setRequest (url: URL) -> URLRequest {
+    
+    // changing this to something more descriptive makes your code self-documenting
+    private static func jsonURLRequest(from url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         return request
     }
     
     internal class func getFoaas(url: URL, completion: @escaping (Foaas?)->Void) {
-        let request = self.setRequest(url: url)
+        let request = self.jsonURLRequest(from: url)
         defaultSession.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            self.handle(error, and: response)
+            self.handle(error, response: response)
             if let d = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: d, options: []) as! [String: AnyObject]
@@ -44,9 +47,9 @@ class FoaasAPIManager {
     }
     
     internal class func getOperations(completion: @escaping ([FoaasOperation]?)->Void ) {
-        let request = self.setRequest(url: URL(string: "https://www.foaas.com/operations")!)
+        let request = self.jsonURLRequest(from: URL(string: "https://www.foaas.com/operations")!)
         defaultSession.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            self.handle(error, and: response)
+            self.handle(error, response: response)
             if let d = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: d, options: []) as! [[String: AnyObject]]

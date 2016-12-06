@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14C818791DF0D775000000C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C818781DF0D775000000C6 /* Images.xcassets */; };
 		81D32F3A1DEA62F000407640 /* OperationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D32F391DEA62F000407640 /* OperationsTableViewController.swift */; };
 		81D32F3D1DEA631600407640 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D32F3C1DEA631600407640 /* MainPageViewController.swift */; };
 		81D32F3F1DEA632300407640 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D32F3E1DEA632300407640 /* PreviewViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14C818781DF0D775000000C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		81D32F391DEA62F000407640 /* OperationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsTableViewController.swift; sourceTree = "<group>"; };
 		81D32F3C1DEA631600407640 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		81D32F3E1DEA632300407640 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +69,9 @@
 				81EC85E21DE50E6D00491531 /* BYT-liamdkane */,
 				81EC85E11DE50E6D00491531 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		81EC85E11DE50E6D00491531 /* Products */ = {
 			isa = PBXGroup;
@@ -88,6 +92,7 @@
 				81EC85EC1DE50E6D00491531 /* LaunchScreen.storyboard */,
 				81D32F3B1DEA62FA00407640 /* Controllers */,
 				81EC85EF1DE50E6D00491531 /* Info.plist */,
+				14C818781DF0D775000000C6 /* Images.xcassets */,
 			);
 			path = "BYT-liamdkane";
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81EC85EE1DE50E6D00491531 /* LaunchScreen.storyboard in Resources */,
+				14C818791DF0D775000000C6 /* Images.xcassets in Resources */,
 				81EC85EB1DE50E6D00491531 /* Assets.xcassets in Resources */,
 				81EC85E91DE50E6D00491531 /* Main.storyboard in Resources */,
 			);
