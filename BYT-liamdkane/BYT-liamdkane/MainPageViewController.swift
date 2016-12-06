@@ -55,6 +55,19 @@ class MainPageViewController: UIViewController {
         }
     }
     
+
+    @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
+        print("working")
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
+
+    
     
     @IBAction func octoButtonTouchedDown(_ sender: UIButton) {
         let newTransform = CGAffineTransform(scaleX: 0.8, y: 0.8)

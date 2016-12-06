@@ -58,6 +58,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Fxn-vx-4WP" secondAttribute="trailing" id="cfH-O3-akV"/>
                             <constraint firstItem="shk-I5-b9R" firstAttribute="top" secondItem="pjb-pD-2hn" secondAttribute="bottom" constant="8" id="vW1-vl-aLR"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hvr-VK-54n" appends="YES" id="ooO-HD-MEj"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="uia-3e-utx"/>
                     <connections>
@@ -66,6 +69,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eG-lR-FKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="hvr-VK-54n">
+                    <connections>
+                        <action selector="longPressed:" destination="Z7y-FE-0xM" id="mDJ-D8-iEE"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1050" y="269"/>
         </scene>
@@ -193,6 +201,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Q0k-8s-KWn" firstAttribute="top" secondItem="Dkt-B7-zdg" secondAttribute="bottom" constant="19" id="0G5-6l-hJe"/>
                                     <constraint firstItem="Dkt-B7-zdg" firstAttribute="top" secondItem="v6J-Fk-rdB" secondAttribute="bottom" constant="1" id="2Le-RB-Flh"/>
@@ -237,6 +246,9 @@
                             <constraint firstItem="RWf-cQ-nMJ" firstAttribute="top" secondItem="5Ji-kU-wwm" secondAttribute="bottom" identifier="bottomOfTheScrollView" id="lzh-JQ-ba7"/>
                             <constraint firstItem="5Ji-kU-wwm" firstAttribute="leading" secondItem="bwq-9j-Vfp" secondAttribute="leading" id="wn0-F8-3Uo"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="haE-ba-ewg" appends="YES" id="OiS-h1-Yk7"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="0sL-yr-gLF">
                         <barButtonItem key="rightBarButtonItem" title="Select" id="c2q-Ev-Nbf">
@@ -257,6 +269,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJH-Ba-876" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="haE-ba-ewg">
+                    <connections>
+                        <action selector="didTapGesture:" destination="40F-mW-xP0" id="B5q-Ov-XH3"/>
+                        <outlet property="delegate" destination="40F-mW-xP0" id="Jv9-ds-UfI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4092" y="300.89955022488761"/>
         </scene>

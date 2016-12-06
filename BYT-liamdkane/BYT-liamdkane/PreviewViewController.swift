@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var previewTextView: UITextView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -40,39 +40,25 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
     }
     
-    func setUpNotifications () {
-        
-        let notificationCenter = NotificationCenter.default
-
-        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-    }
-
     //MARK: -Keyboard Methods
     
+    func setUpNotifications () {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
     //StackOverflow Source: http://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
     
     func keyboardWillShow(notification: NSNotification) {
          print("keyboard up")
             let keyboardSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue
         self.scrollViewBottomContraint.constant = (keyboardSize?.cgRectValue.height)!
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y == 0{
-//                self.view.frame.origin.y -= keyboardSize.height
-//            }
-//        }
-//        
     }
     
     func keyboardWillHide(notification: NSNotification) {
         print("keyboard down")
         self.scrollViewBottomContraint.constant = 0
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y != 0{
-//                self.view.frame.origin.y += keyboardSize.height
-//            }
-//        }
     }
     
     //MARK: - Text Upate Methods
@@ -149,6 +135,9 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         let notificationCenter = NotificationCenter.default
         notificationCenter.post(name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: self.foaas)
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func didTapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     // MARK: - Navigation
