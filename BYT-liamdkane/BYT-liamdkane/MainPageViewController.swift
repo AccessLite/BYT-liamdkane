@@ -25,8 +25,8 @@ class MainPageViewController: UIViewController {
     // MARK: Methods
     func updateUI(using foaas: Foaas) {
         DispatchQueue.main.async {
-            self.messageLabel.text = foaas.message
-            self.fromLabel.text = "From,\n" + foaas.subtitle
+            self.messageLabel.text = foaas.message.filterBadLanguage(false)
+            self.fromLabel.text = "From,\n" + foaas.subtitle.filterBadLanguage(false)
         }
     }
     

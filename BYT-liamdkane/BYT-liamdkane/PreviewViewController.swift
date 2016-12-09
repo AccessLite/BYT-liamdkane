@@ -96,7 +96,7 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
                 
                 guard let fieldsArray = self.foaasPathBuilder?.allKeys() else { return }
                 self.foaas = foaas
-                self.previewTextView.text = foaas?.description
+                self.previewTextView.text = foaas?.description.filterBadLanguage(false)
                 switch fieldsArray.count {
                 case 2:
                     self.nameLabel.text = ":\(fieldsArray[0])"

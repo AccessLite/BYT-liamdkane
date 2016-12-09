@@ -29,7 +29,7 @@ class OperationsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = operations[indexPath.row].name
+        cell.textLabel?.text = operations[indexPath.row].name.filterBadLanguage(false)
         return cell
     }
 
