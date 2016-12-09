@@ -60,6 +60,7 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hvr-VK-54n" appends="YES" id="ooO-HD-MEj"/>
+                            <outletCollection property="gestureRecognizers" destination="RIB-bK-lTF" appends="YES" id="9d4-W4-S84"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="uia-3e-utx"/>
@@ -74,6 +75,11 @@
                         <action selector="longPressed:" destination="Z7y-FE-0xM" id="mDJ-D8-iEE"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="RIB-bK-lTF">
+                    <connections>
+                        <action selector="screenTappedShort:" destination="Z7y-FE-0xM" id="3TK-8Y-r1n"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1050" y="269"/>
         </scene>
@@ -90,11 +96,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hIq-Ms-mvz" id="SFd-j2-Q7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJz-Ra-0fI">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
