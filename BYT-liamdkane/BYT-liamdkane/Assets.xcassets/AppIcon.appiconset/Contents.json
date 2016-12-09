@@ -140,9 +140,9 @@
     },
     {
       "size" : "76x76",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-76x76@1x.png",
-      "scale" : "1x"
+      "idiom" : "ipad",
+      "filename" : "Icon-App-76x76@1x-1.png",
+      "scale" : "3x"
     },
     {
       "size" : "76x76",
