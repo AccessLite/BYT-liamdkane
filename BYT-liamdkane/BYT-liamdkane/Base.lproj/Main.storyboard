@@ -57,6 +57,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xaR-nN-XUm" secondAttribute="trailing" id="aYm-au-a9l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fxn-vx-4WP" secondAttribute="trailing" id="cfH-O3-akV"/>
                             <constraint firstItem="shk-I5-b9R" firstAttribute="top" secondItem="pjb-pD-2hn" secondAttribute="bottom" constant="8" id="vW1-vl-aLR"/>
+                            <constraint firstItem="pjb-pD-2hn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xaR-nN-XUm" secondAttribute="bottom" constant="60" id="zNf-Kg-UmE"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hvr-VK-54n" appends="YES" id="ooO-HD-MEj"/>

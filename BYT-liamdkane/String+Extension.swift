@@ -13,7 +13,7 @@ extension String {
         guard toggle else { return self }
         let wordsToBeFiltered: Set<String> = ["fuck", "bitch", "ass", "dick", "pussy", "shit", "twat", "cunt", "cock"]
         let vowels: Set<Character> = ["a", "e", "i", "o", "u"]
-        
+        //Breaks down the word into an Arr, where every word will be checked and filtered
         func filterFoulWords (_ previewText: String) -> String {
             var words = previewText.components(separatedBy: " ")
             for (index, word) in words.enumerated() {
@@ -22,6 +22,8 @@ extension String {
             }
             return words.joined(separator: " ")
         }
+        //this is the filter, it checks to see if the word contains an instance of a foul word by iterating over the foul words. if it comes back true, then it will replace the first instance of a vowel excepting y with a * and return the updated word.
+        
         func filter(_ word: String) -> String {
             for foulWord in wordsToBeFiltered where word.lowercased().contains(foulWord){
                 for char in word.lowercased().characters where vowels.contains(char) {
@@ -30,7 +32,7 @@ extension String {
             }
             return word
         }
-        
+        //implements the filter on itself.
         return filterFoulWords(self)
     }
 }

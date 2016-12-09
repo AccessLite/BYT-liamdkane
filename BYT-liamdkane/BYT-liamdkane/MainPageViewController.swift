@@ -49,6 +49,7 @@ class MainPageViewController: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(updateFoaas(sender:)), name: Notification.Name(rawValue: "FoaasObjectDidUpdate"), object: nil)
     }
     
+    //Adds the foaas to the notification to be sent
     func updateFoaas(sender: Notification) {
         if let notificationBundle = sender.object as? Foaas {
             self.updateUI(using: notificationBundle)
@@ -86,9 +87,6 @@ class MainPageViewController: UIViewController {
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
-        
-        
-        // double check that the image actually gets saved to the camera roll
     }
     
     

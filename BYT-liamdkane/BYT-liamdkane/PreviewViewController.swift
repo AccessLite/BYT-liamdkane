@@ -64,9 +64,11 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     //MARK: - Text Upate Methods
     
     func updateText (_ textField: UITextField) {
+        //An array of all of the keys, could be used to iterate through this instead of switching maybe?
         guard let key = foaasPathBuilder?.allKeys() else { return }
         guard let validText = textField.text else { return }
         if textField.text!.isEmpty {
+            //this resets the dictionary back to the original parameters
             foaasPathBuilder?.update(key: textField.placeholder!, value: ":\(textField.placeholder!)")
         } else {
             switch textField {
@@ -93,7 +95,7 @@ class PreviewViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         FoaasDataManager.shared.getFoaas(url: url, completion: { (foaas: Foaas?) in
             DispatchQueue.main.async {
-                
+               //this switches on the count of the fields arr, although it doesn't account for more than 3 parameters.
                 guard let fieldsArray = self.foaasPathBuilder?.allKeys() else { return }
                 self.foaas = foaas
                 self.previewTextView.text = foaas?.description.filterBadLanguage(false)
