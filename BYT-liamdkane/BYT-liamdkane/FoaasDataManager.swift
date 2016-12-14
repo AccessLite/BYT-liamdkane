@@ -34,4 +34,12 @@ class FoaasDataManager {
         FoaasDataManager.defaults.removeObject(forKey: FoaasDataManager.operationsKey)
         FoaasDataManager.shared.operations = nil
     }
+    
+    internal func getFoaas(url: URL, completion: @escaping (Foaas?)->Void) {
+        FoaasAPIManager.getFoaas(url: url) { (foaas: Foaas?) in
+            if let validFoaas = foaas {
+                completion(validFoaas)
+            }
+        }
+    }
 }

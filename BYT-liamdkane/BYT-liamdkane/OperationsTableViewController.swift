@@ -29,17 +29,13 @@ class OperationsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = operations[indexPath.row].name
+        cell.textLabel?.text = operations[indexPath.row].name.filterBadLanguage(false)
         return cell
     }
 
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-<<<<<<< HEAD
-        dismiss(animated: true, completion: nil)
-=======
       // This has to dismiss the nav stack
       self.dismiss(animated: true, completion: nil)
->>>>>>> da989d5f9179a440b7dec75f89e96fd2a1d96773
     }
     
     // MARK: - Navigation

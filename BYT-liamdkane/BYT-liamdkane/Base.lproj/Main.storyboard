@@ -22,13 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxn-vx-4WP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fxn-vx-4WP">
                                 <rect key="frame" x="16" y="20" width="343" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-nN-XUm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text=" " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-nN-XUm">
                                 <rect key="frame" x="16" y="80" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -51,15 +51,18 @@
                         <constraints>
                             <constraint firstItem="pjb-pD-2hn" firstAttribute="centerX" secondItem="BAH-yi-ynk" secondAttribute="centerX" id="0zk-K5-QkC"/>
                             <constraint firstItem="xaR-nN-XUm" firstAttribute="top" secondItem="Fxn-vx-4WP" secondAttribute="bottom" id="6PE-lz-IQE"/>
+                            <constraint firstItem="xaR-nN-XUm" firstAttribute="top" secondItem="Fxn-vx-4WP" secondAttribute="bottom" id="E2A-VV-nGb"/>
                             <constraint firstItem="Fxn-vx-4WP" firstAttribute="top" secondItem="d6G-ap-kz1" secondAttribute="bottom" id="MZO-1i-vaH"/>
                             <constraint firstItem="xaR-nN-XUm" firstAttribute="leading" secondItem="BAH-yi-ynk" secondAttribute="leadingMargin" id="NFL-rD-1g6"/>
                             <constraint firstItem="Fxn-vx-4WP" firstAttribute="leading" secondItem="BAH-yi-ynk" secondAttribute="leadingMargin" id="XST-Hq-yVY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xaR-nN-XUm" secondAttribute="trailing" id="aYm-au-a9l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fxn-vx-4WP" secondAttribute="trailing" id="cfH-O3-akV"/>
                             <constraint firstItem="shk-I5-b9R" firstAttribute="top" secondItem="pjb-pD-2hn" secondAttribute="bottom" constant="8" id="vW1-vl-aLR"/>
+                            <constraint firstItem="pjb-pD-2hn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xaR-nN-XUm" secondAttribute="bottom" constant="8" id="zNf-Kg-UmE"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="hvr-VK-54n" appends="YES" id="ooO-HD-MEj"/>
+                            <outletCollection property="gestureRecognizers" destination="RIB-bK-lTF" appends="YES" id="9d4-W4-S84"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="uia-3e-utx"/>
@@ -74,6 +77,11 @@
                         <action selector="longPressed:" destination="Z7y-FE-0xM" id="mDJ-D8-iEE"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="RIB-bK-lTF">
+                    <connections>
+                        <action selector="screenTappedShort:" destination="Z7y-FE-0xM" id="3TK-8Y-r1n"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1050" y="269"/>
         </scene>
@@ -90,11 +98,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hIq-Ms-mvz" id="SFd-j2-Q7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJz-Ra-0fI">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
